@@ -8,7 +8,7 @@ module ChunkyPNG::Color
     avg_green = pixel_block.map{|p| g(p)}.inject(&:+) / pixel_block.size
     avg_blue  = pixel_block.map{|p| r(p)}.inject(&:+) / pixel_block.size
     # puts "#{avg_red} #{avg_green} #{avg_blue}"
-    gray = 256 - (0.299 * avg_red + 0.587 * avg_green + 0.114 * avg_blue).ceil
+    gray = 256 - (0.299 * avg_red + 0.587 * avg_green + 0.114 * avg_blue)
   end
 end
 
@@ -56,7 +56,7 @@ class HalfToneImage < ChunkyPNG::Image
 
     @halftone_coords.each do |coord|
       #<circle cx="150" cy="100" r="80" fill="green" />
-      svg_contents << "<circle cx=\"#{coord[0]}\" cy=\"#{coord[1]}\" r=\"#{(coord[2]/50).floor}\" fill=\"black\" /> \n"
+      svg_contents << "<circle cx=\"#{coord[0]}\" cy=\"#{coord[1]}\" r=\"#{(coord[2]/50)}\" fill=\"black\" /> \n"
     end
 
     svg_contents << "</svg>"
