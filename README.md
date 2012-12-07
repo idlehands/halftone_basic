@@ -2,7 +2,7 @@ halftone_basic
 ==============
 
 Basic class to make svg halftones from a png. Utilizes chunky_png.
-
+This can be seen in action at http://xylotones.com.
 #to-do
 - ~~interface with image, using chunky_png~~
 - ~~break down image into square "chunks" based on a parameter~~
